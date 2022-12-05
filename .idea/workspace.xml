@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b6a0e29-c07a-4743-a0e2-240b251084b7" name="Changes" comment="First Commit">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/controlador/AppController.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/modelo/GestorModelo.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/modelo/clases/Producto.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/modelo/clases/Proveedor.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/modelo/sentencias/SentenciasSQL.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/vista/Vista.kt" afterDir="false" />
+    <list default="true" id="6b6a0e29-c07a-4743-a0e2-240b251084b7" name="Changes" comment="Creación estructura MVC">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/modelo/clases/Producto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/modelo/clases/Producto.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +59,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670001358462</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Creación estructura MVC">
+      <created>1670260294577</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1670260294577</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -81,6 +82,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="First Commit" />
+    <MESSAGE value="Creación estructura MVC" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creación estructura MVC" />
   </component>
 </project>
