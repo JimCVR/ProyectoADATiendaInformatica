@@ -6,10 +6,8 @@ class Vista {
     fun menuPrincipal(){
         println("Bienvenido")
         println("***********")
-        println("1.Consultar productos")
-        println("2.Consultar producto")
-        println("3.Actualizar producto")
-        println("4.Borrar producto")
+        println("1.Ir al area de Proveedores")
+        println("2.Ir al Inventario")
     }
     fun menuProveedor(){
         println("Area de Proveedores")
@@ -32,7 +30,8 @@ class Vista {
         println("3.Actualizar producto")
 
         println("4.Borrar producto")
-        println("4.Borrar producto por tipo")
+        println("4.1.Borrar producto concreto")
+        println("4.2.Borrar producto por tipo")
 
         println("5.Aumentar Stock")
         println("6.")
@@ -47,16 +46,6 @@ class Vista {
 
     fun noProdStock() {
         println("No existen productos")
-    }
-
-    fun showProduct(producto: Producto) {
-        println("Producto")
-        println("Id: ${producto.id}")
-        println("Nombre: ${producto.nombre}")
-        println("Precio: ${producto.precio}")
-        println("Cantidad: ${producto.cantidad}")
-        println("Descripcion: ${producto.desc}")
-
     }
 
     fun errorGeneral() {
