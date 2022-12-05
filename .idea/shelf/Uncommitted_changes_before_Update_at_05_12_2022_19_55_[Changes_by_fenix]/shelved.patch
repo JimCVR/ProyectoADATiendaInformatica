@@ -1,0 +1,17 @@
+Index: src/main/kotlin/modelo/GestorModelo.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package modelo\r\n\r\nclass GestorModelo {\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/kotlin/modelo/GestorModelo.kt b/src/main/kotlin/modelo/GestorModelo.kt
+--- a/src/main/kotlin/modelo/GestorModelo.kt	(revision e2d0c20e0b6bb3c33598eb9d5bffafa1787314be)
++++ b/src/main/kotlin/modelo/GestorModelo.kt	(date 1670266470972)
+@@ -1,4 +1,4 @@
+ package modelo
++fun modelo(){
+ 
+-class GestorModelo {
+ }
+\ No newline at end of file

@@ -1,4 +1,4 @@
 package modelo
+fun modelo(){
 
-class GestorModelo {
 }
