@@ -19,7 +19,7 @@ class GestorModelo private constructor() {
     }
 
     private val url: String = "jdbc:mysql://localhost/"
-    private val bd: String = "oficinaDB"
+    private val bd: String = "tiendaInformatica"
     private val user: String = "root"
     private val pass: String = ""
 
