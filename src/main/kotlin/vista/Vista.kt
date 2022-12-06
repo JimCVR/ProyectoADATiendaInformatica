@@ -1,8 +1,6 @@
 package vista
 
 class Vista {
-
-
     fun menuPrincipal(){
         println("Bienvenido")
         println("***********")
