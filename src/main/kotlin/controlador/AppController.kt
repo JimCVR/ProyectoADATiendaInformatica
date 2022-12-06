@@ -1,6 +1,8 @@
 package controlador
 
 import aplicacion.modelo.GestorModelo
+import modelo.clases.Producto
+import modelo.clases.Proveedor
 import modelo.sentencias.SentenciasSQL
 import vista.Vista
 import java.sql.Connection
@@ -73,8 +75,8 @@ class AppController(val vista: Vista) {
 
     fun delete(id: String){
         try {
-            gestor.cargarDriver()
-            val cn: Connection = gestor.establecerConexion()!!
+
+
             val ps =
                 cn.prepareStatement("delete from empleados where id = '" + id.lowercase() + "'")
             ps.executeUpdate()
@@ -85,24 +87,73 @@ class AppController(val vista: Vista) {
         }
     }
 
-    fun update(){
+    fun onUpdateExistencias(producto: Producto,cant:Int){
 
         try {
-            gestor.cargarDriver()
-            val cn: Connection = gestor.establecerConexion()!!
+            val cn: Connection = gestor.conect()
+            gestor.conect()
             val ps =
-                cn.prepareStatement("update empleados set " + columna + "= ? where id = '" + id.lowercase() + "'")
-            ps.setString(1, valor)
+                cn.prepareStatement(SentenciasSQL.updateCantProd)
+            ps.setInt(1, cant)
+            ps.setString(2, producto.id)
             ps.executeUpdate()
         } catch (s: SQLException) {
             s.printStackTrace()
         }finally {
-            gestor.cerrarConexion()
+            gestor.disconect()
         }
     }
 
+    fun onUpdatePrecio(producto:Producto ,precio:Double){
 
+        try {
+            val cn: Connection = gestor.conect()
+            gestor.conect()
+            val ps =
+                cn.prepareStatement(SentenciasSQL.updateCantProd)
+            ps.setDouble(1, precio)
+            ps.setString(2, producto.id)
+            ps.executeUpdate()
+        } catch (s: SQLException) {
+            s.printStackTrace()
+        }finally {
+            gestor.disconect()
+        }
+    }
 
+    fun onUpdateDirProveedor(proveedor: Proveedor ,direccion:String){
+
+        try {
+            val cn: Connection = gestor.conect()
+            gestor.conect()
+            val ps =
+                cn.prepareStatement(SentenciasSQL.updateDirProveedor)
+            ps.setString(1, direccion)
+            ps.setString(2, proveedor.id)
+            ps.executeUpdate()
+        } catch (s: SQLException) {
+            s.printStackTrace()
+        }finally {
+            gestor.disconect()
+        }
+    }
+
+    fun onUpdateTelProveedor(proveedor: Proveedor ,telefono:Int){
+
+        try {
+            val cn: Connection = gestor.conect()
+            gestor.conect()
+            val ps =
+                cn.prepareStatement(SentenciasSQL.updateDirProveedor)
+            ps.setInt(1, telefono)
+            ps.setString(2, proveedor.id)
+            ps.executeUpdate()
+        } catch (s: SQLException) {
+            s.printStackTrace()
+        }finally {
+            gestor.disconect()
+        }
+    }
 
     fun onAllProducts(){
         val gestor: GestorModelo = GestorModelo.getInstance()
