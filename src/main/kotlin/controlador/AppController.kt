@@ -13,43 +13,52 @@ class AppController(val vista: Vista) {
 
     private val gestor = GestorModelo.getInstance()
     fun onSelectProducto(query: String) {
+        val listaProducto: MutableList<Producto> =  mutableListOf()
         try {
 
             val cn: Connection = gestor.conect()
             val ps = cn.prepareStatement(query)
             val rs: ResultSet = ps.executeQuery()
             while (rs.next()) {
-                println(rs.getString(1))
-                println(rs.getString(2))
-                println(rs.getInt(3))
-                println(rs.getDouble(4))
-                println(rs.getString(5))
+                listaProducto.add(Producto(
+                    rs.getString(1),
+                    rs.getString(2),
+                    rs.getInt(3),
+                    rs.getDouble(4),
+                    rs.getString(5))
+                )
             }
         } catch (s: SQLException) {
             s.printStackTrace()
         } finally {
+            vista.mostrarProducto(listaProducto)
             gestor.disconect()
         }
     }
 
 
     fun onSelectProveedor() {
+        val listaProveedor: MutableList<Proveedor> =  mutableListOf()
         try {
             val cn: Connection = gestor.conect()
             val ps =
                 cn.prepareStatement(SentenciasSQL.selectAllProducto)
             val rs = ps.executeQuery()
             while (rs.next()) {
-                println(rs.getString(1))
-                println(rs.getString(2))
-                println(rs.getString(3))
-                println(rs.getInt(4))
-                println(rs.getString(5))
+                listaProveedor.add(
+                    Proveedor(
+                    rs.getString(1),
+                    rs.getString(2),
+                    rs.getString(3),
+                    rs.getInt(4),
+                    rs.getString(5))
+                )
             }
 
         } catch (s: SQLException) {
             s.printStackTrace()
         } finally {
+            vista.mostrarProveedor(listaProveedor)
             gestor.disconect()
         }
 
@@ -57,7 +66,6 @@ class AppController(val vista: Vista) {
 
     fun onInsertProducto(query: String, producto: Producto) {
         try {
-
             val cn: Connection = gestor.conect()
             val ps = cn.prepareStatement(query)
             ps.setString(1, producto.id)

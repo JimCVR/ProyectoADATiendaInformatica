@@ -1,5 +1,8 @@
 package vista
 
+import modelo.clases.Producto
+import modelo.clases.Proveedor
+
 class Vista {
     fun menuPrincipal(){
         println("Bienvenido")
@@ -37,8 +40,12 @@ class Vista {
         println("6.")
         println("*********************")
     }
-
-
+fun mostrarProveedor(listaProveedor: MutableList<Proveedor>){
+    println("Muestra proveedores")
+}
+fun mostrarProducto(listaProducto: MutableList<Producto>){
+    println("Muestra productos")
+}
 
     fun basedeDatosCaida() {
         println("Error. Base de datos caida")
