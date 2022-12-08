@@ -1,3 +1,7 @@
+import vista.Vista
+
 fun main() {
-    println("Hola mundo")
+    //Este metodo inicia la aplicacion
+    val vista = Vista()
+    vista.menuPrincipal()
 }
