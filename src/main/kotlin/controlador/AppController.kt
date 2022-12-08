@@ -96,7 +96,7 @@ class AppController(val vista: Vista) {
     }
 
     fun onUpdateExistencias(producto: Producto,cant:Int){
-
+        var nLineas:Int=0
         try {
             val cn: Connection = gestor.conect()
             gestor.conect()
@@ -104,10 +104,11 @@ class AppController(val vista: Vista) {
                 cn.prepareStatement(SentenciasSQL.updateCantProd)
             ps.setInt(1, cant)
             ps.setString(2, producto.id)
-            ps.executeUpdate()
+            nLineas = ps.executeUpdate()
         } catch (s: SQLException) {
             s.printStackTrace()
         }finally {
+            vista.updateRealizado(nLineas)
             gestor.disconect()
         }
     }
@@ -156,6 +157,7 @@ class AppController(val vista: Vista) {
             ps.setInt(1, telefono)
             ps.setString(2, proveedor.id)
             ps.executeUpdate()
+
         } catch (s: SQLException) {
             s.printStackTrace()
         }finally {
@@ -189,5 +191,6 @@ class AppController(val vista: Vista) {
         gestor.disconect()
         vista.salir()
     }
+
 }
 
