@@ -12,4 +12,6 @@ object SentenciasSQL {
     //Sentencias Proveedores
     val updateDirProveedor:String = "UPDATE proveedor SET direccion=? WHERE id=?"
     val updateTelProveedor:String = "UPDATE proveedor SET telefono=? WHERE id=?"
+
+
 }

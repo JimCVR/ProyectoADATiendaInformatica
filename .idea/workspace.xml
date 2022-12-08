@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b6a0e29-c07a-4743-a0e2-240b251084b7" name="Changes" comment="appcontroller">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_12_22_20_03__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_12_22_20_03__Changes_.xml" afterDir="false" />
+    <list default="true" id="6b6a0e29-c07a-4743-a0e2-240b251084b7" name="Changes" comment="Cambio en AppCOntroler Update1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/controlador/AppController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/controlador/AppController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/modelo/sentencias/SentenciasSQL.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/modelo/sentencias/SentenciasSQL.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +18,7 @@
       <list>
         <option value="Class" />
         <option value="Kotlin Class" />
+        <option value="package-info" />
       </list>
     </option>
   </component>
@@ -36,17 +34,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/home/fenix/IdeaProjects/pruebaSingleton",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -77,14 +75,21 @@
       <option name="project" value="LOCAL" />
       <updated>1670260997915</updated>
     </task>
-    <task id="LOCAL-00004" summary="appcontroller">
-      <created>1670350310851</created>
+    <task id="LOCAL-00004" summary="SentenciasSQL">
+      <created>1670350134329</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1670350310851</updated>
+      <updated>1670350134329</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Cambio en AppCOntroler Update1">
+      <created>1670523312233</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1670523312233</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -102,7 +107,8 @@
     <MESSAGE value="First Commit" />
     <MESSAGE value="Creación estructura MVC" />
     <MESSAGE value="Data class Producto y Proveedor" />
-    <MESSAGE value="appcontroller" />
-    <option name="LAST_COMMIT_MESSAGE" value="appcontroller" />
+    <MESSAGE value="SentenciasSQL" />
+    <MESSAGE value="Cambio en AppCOntroler Update1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cambio en AppCOntroler Update1" />
   </component>
 </project>
