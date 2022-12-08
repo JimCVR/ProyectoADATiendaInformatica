@@ -10,9 +10,11 @@ class Vista {
     fun menuProveedor(){
         println("Area de Proveedores")
         println("*********************")
-        println("1.Consultar productos")
-        println("2.Consultar producto")
-        println("3.Actualizar producto")
+        println("1.Consultar proveedores")
+        println("1.1.Consultar proveedores")
+        println("1.2.Consultar proveedor")
+        println("2.Insertar Proveedor")
+        println("3.Actualizar proveedor")
         println("4.Borrar producto")
         println("*********************")
     }

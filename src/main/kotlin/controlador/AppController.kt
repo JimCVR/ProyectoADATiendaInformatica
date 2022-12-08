@@ -12,7 +12,7 @@ import java.sql.SQLException
 class AppController(val vista: Vista) {
 
     private val gestor = GestorModelo.getInstance()
-    fun selectProducto(query: String) {
+    fun onSelectProducto(query: String) {
         try {
 
             val cn: Connection = gestor.conect()
@@ -33,7 +33,7 @@ class AppController(val vista: Vista) {
     }
 
 
-    fun selectProveedor() {
+    fun onSelectProveedor() {
         try {
             val cn: Connection = gestor.conect()
             val ps =
@@ -55,7 +55,7 @@ class AppController(val vista: Vista) {
 
     }
 
-    fun insertProducto(query: String, producto: Producto) {
+    fun onInsertProducto(query: String, producto: Producto) {
         try {
 
             val cn: Connection = gestor.conect()
@@ -75,7 +75,7 @@ class AppController(val vista: Vista) {
         }
     }
 
-    fun insertProveedor(query: String, proveedor: Proveedor) {
+    fun onInsertProveedor(query: String, proveedor: Proveedor) {
         try {
 
             val cn: Connection = gestor.conect()
