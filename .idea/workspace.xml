@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b6a0e29-c07a-4743-a0e2-240b251084b7" name="Changes" comment="Cambios en SentenciasSQL y AppController">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="6b6a0e29-c07a-4743-a0e2-240b251084b7" name="Changes" comment="Cambio en AppCOntroler Update1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/controlador/AppController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/controlador/AppController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/modelo/sentencias/SentenciasSQL.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/modelo/sentencias/SentenciasSQL.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +82,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670350134329</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Cambio en AppCOntroler Update1">
+      <created>1670523312233</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1670523312233</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -103,6 +108,7 @@
     <MESSAGE value="Creación estructura MVC" />
     <MESSAGE value="Data class Producto y Proveedor" />
     <MESSAGE value="SentenciasSQL" />
-    <option name="LAST_COMMIT_MESSAGE" value="SentenciasSQL" />
+    <MESSAGE value="Cambio en AppCOntroler Update1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cambio en AppCOntroler Update1" />
   </component>
 </project>

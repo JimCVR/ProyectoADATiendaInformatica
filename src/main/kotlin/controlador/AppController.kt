@@ -114,7 +114,7 @@ class AppController(val vista: Vista) {
     }
 
     fun onUpdatePrecio(producto:Producto ,precio:Double){
-
+        var nLineas:Int=0
         try {
             val cn: Connection = gestor.conect()
             gestor.conect()
@@ -122,16 +122,17 @@ class AppController(val vista: Vista) {
                 cn.prepareStatement(SentenciasSQL.updateCantProd)
             ps.setDouble(1, precio)
             ps.setString(2, producto.id)
-            ps.executeUpdate()
+            nLineas=ps.executeUpdate()
         } catch (s: SQLException) {
             s.printStackTrace()
         }finally {
+            vista.updateRealizado(nLineas)
             gestor.disconect()
         }
     }
 
     fun onUpdateDirProveedor(proveedor: Proveedor ,direccion:String){
-
+        var nLineas:Int=0
         try {
             val cn: Connection = gestor.conect()
             gestor.conect()
@@ -139,16 +140,17 @@ class AppController(val vista: Vista) {
                 cn.prepareStatement(SentenciasSQL.updateDirProveedor)
             ps.setString(1, direccion)
             ps.setString(2, proveedor.id)
-            ps.executeUpdate()
+            nLineas=ps.executeUpdate()
         } catch (s: SQLException) {
             s.printStackTrace()
         }finally {
+            vista.updateRealizado(nLineas)
             gestor.disconect()
         }
     }
 
     fun onUpdateTelProveedor(proveedor: Proveedor ,telefono:Int){
-
+        var nLineas:Int=0
         try {
             val cn: Connection = gestor.conect()
             gestor.conect()
@@ -156,11 +158,11 @@ class AppController(val vista: Vista) {
                 cn.prepareStatement(SentenciasSQL.updateDirProveedor)
             ps.setInt(1, telefono)
             ps.setString(2, proveedor.id)
-            ps.executeUpdate()
-
+            nLineas=ps.executeUpdate()
         } catch (s: SQLException) {
             s.printStackTrace()
         }finally {
+            vista.updateRealizado(nLineas)
             gestor.disconect()
         }
     }
