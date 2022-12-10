@@ -1,7 +1,8 @@
+import controlador.AppController
 import vista.Vista
 
-fun main() {
-    //Este metodo inicia la aplicacion
-    val vista = Vista()
-    vista.menuPrincipal()
+fun main(){
+    var controller: AppController = AppController(Vista())
+    controller.onStart()
+    controller.onExit()
 }

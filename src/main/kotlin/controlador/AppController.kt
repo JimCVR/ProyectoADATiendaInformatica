@@ -116,7 +116,7 @@ class AppController(val vista: Vista) {
         } catch (s: SQLException) {
             s.printStackTrace()
         }finally {
-            vista.updateRealizado(nLineas)
+            //vista.updateRealizado(nLineas)
             gestor.disconect()
         }
     }
@@ -134,7 +134,7 @@ class AppController(val vista: Vista) {
         } catch (s: SQLException) {
             s.printStackTrace()
         }finally {
-            vista.updateRealizado(nLineas)
+            //vista.updateRealizado(nLineas)
             gestor.disconect()
         }
     }
@@ -152,7 +152,7 @@ class AppController(val vista: Vista) {
         } catch (s: SQLException) {
             s.printStackTrace()
         }finally {
-            vista.updateRealizado(nLineas)
+            //vista.updateRealizado(nLineas)
             gestor.disconect()
         }
     }
@@ -170,7 +170,7 @@ class AppController(val vista: Vista) {
         } catch (s: SQLException) {
             s.printStackTrace()
         }finally {
-            vista.updateRealizado(nLineas)
+            //vista.updateRealizado(nLineas)
             gestor.disconect()
         }
     }
@@ -191,9 +191,8 @@ class AppController(val vista: Vista) {
         }
     }*/
 
-    fun onStart(): Int {
-        val opcion = vista.mainMenu()
-        return opcion
+    fun onStart(){
+        val opcion = vista.menuPrincipal()
     }
 
     fun onExit() {

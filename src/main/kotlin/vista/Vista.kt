@@ -5,21 +5,29 @@ import modelo.clases.Proveedor
 
 class Vista {
     fun menuPrincipal(){
-        println("Bienvenido")
-        println("***********")
-        println("1.Ir al area de Proveedores")
-        println("2.Ir al Inventario")
+        println("Bienvenido, elija una opción:" +
+                "\n1.Gestionar proveedores"+
+                "\n2.Gestionar productos" +
+                "\n0.Salir")
+        var error:Boolean = false
+        do {
+            var opc: Int = readln().toInt()
+            when(opc){
+                1 -> menuProveedor()
+                2 -> menuProducto()
+                0 -> error=true
+                else -> {
+                    println("Opción incorrecta, introduzca otra:")
+                }
+            }
+        } while (!error);
     }
     fun menuProveedor(){
-        println("Area de Proveedores")
-        println("*********************")
-        println("1.Consultar proveedores")
-        println("1.1.Consultar proveedores")
-        println("1.2.Consultar proveedor")
-        println("2.Insertar Proveedor")
-        println("3.Actualizar proveedor")
-        println("4.Borrar producto")
-        println("*********************")
+        println("ÁREA DE PROVEEDORES" +
+                "elije" +
+                "1.Mostrar lista de proveedores" +
+                "")
+
     }
     fun menuProducto(){
         println("Inventario")
@@ -59,12 +67,7 @@ fun mostrarProducto(listaProducto: MutableList<Producto>){
         println("Error general")
     }
 
-    fun mainMenu():Int {
-        println("Bienvenido. Elije una opción")
-        println("1. Mostrar productos con stock")
-        println("0. Salir")
-        return readln().trim().toInt()
-    }
+
 
     fun salir() {
         println("Adios")
