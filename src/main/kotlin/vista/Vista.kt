@@ -49,7 +49,14 @@ class Vista {
         println("*********************")
     }
 fun mostrarProveedor(listaProveedor: MutableList<Proveedor>){
-    println("Muestra proveedores")
+
+     listaProveedor.forEach(){ proveedor: Proveedor ->
+         println(proveedor.id)
+         println(proveedor.nombre)
+         println(proveedor.direccion)
+         println(proveedor.telefono)
+
+    }
 }
 fun mostrarProducto(listaProducto: MutableList<Producto>){
     println("Muestra productos")

@@ -3,6 +3,7 @@ import vista.Vista
 
 fun main(){
     var controller: AppController = AppController(Vista())
-    controller.onStart()
-    controller.onExit()
+    controller.onSelectProveedor()
+   // controller.onStart()
+    //controller.onExit()
 }

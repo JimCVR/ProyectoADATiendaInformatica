@@ -25,6 +25,7 @@ class AppController(val vista: Vista) {
                     rs.getString(2),
                     rs.getInt(3),
                     rs.getDouble(4),
+                    rs.getString(5),
                     rs.getString(5))
                 )
             }
@@ -51,7 +52,7 @@ class AppController(val vista: Vista) {
                     rs.getString(2),
                     rs.getString(3),
                     rs.getInt(4),
-                    rs.getString(5))
+                    )
                 )
             }
 
@@ -73,6 +74,7 @@ class AppController(val vista: Vista) {
             ps.setInt(3, producto.existencias)
             ps.setDouble(4, producto.precio)
             ps.setString(5, producto.tipo)
+            ps.setString(5, producto.idProveedor)
 
             ps.executeUpdate()
 
@@ -92,7 +94,6 @@ class AppController(val vista: Vista) {
             ps.setString(2, proveedor.nombre)
             ps.setString(3, proveedor.direccion)
             ps.setInt(4, proveedor.telefono)
-            ps.setString(5, proveedor.idProd)
 
             ps.executeUpdate()
 
