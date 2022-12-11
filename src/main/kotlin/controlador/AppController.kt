@@ -9,7 +9,7 @@ import java.sql.Connection
 import java.sql.ResultSet
 import java.sql.SQLException
 
-class AppController(val vista: Vista) {
+sealed class AppController(val vista: Vista) {
 
     private val gestor = GestorModelo.getInstance()
     fun onSelectProducto(query: String) {
@@ -36,6 +36,7 @@ class AppController(val vista: Vista) {
             gestor.disconect()
         }
     }
+
 
 
     fun onSelectProveedor() {

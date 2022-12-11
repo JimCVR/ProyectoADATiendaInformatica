@@ -1,5 +1,6 @@
 package vista
 
+import controlador.AppController
 import modelo.clases.Producto
 import modelo.clases.Proveedor
 
@@ -27,8 +28,17 @@ class Vista {
                 "\nelije" +
                 "\n1.Mostrar lista de proveedores." +
                 "\n2.Mostrar información de un proveedor." +
-                "\n3.Actualizar datos (telefono o dirección)" +
-                "\n")
+                "\n3.Añadir nuevo proveedor."+
+                "\n4.Actualizar datos de un proveedor (telefono o dirección)." +
+                "\n5.Borrar un proveedor.")
+        var error:Boolean = false
+        do{
+            var opc: Int = readln().toInt()
+            when(opc){
+                1 -> println()
+
+            }
+        }while (!error)
 
     }
     fun menuProducto(){
