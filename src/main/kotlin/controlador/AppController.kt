@@ -128,7 +128,7 @@ class AppController(val vista: Vista) {
             val cn: Connection = gestor.conect()
             gestor.conect()
             val ps =
-                cn.prepareStatement(SentenciasSQL.updateCantProd)
+                cn.prepareStatement(SentenciasSQL.updatePriceProd)
             ps.setDouble(1, precio)
             ps.setString(2, producto.id)
             nLineas=ps.executeUpdate()
@@ -164,7 +164,7 @@ class AppController(val vista: Vista) {
             val cn: Connection = gestor.conect()
             gestor.conect()
             val ps =
-                cn.prepareStatement(SentenciasSQL.updateDirProveedor)
+                cn.prepareStatement(SentenciasSQL.updateTelProveedor)
             ps.setInt(1, telefono)
             ps.setString(2, proveedor.id)
             nLineas=ps.executeUpdate()
