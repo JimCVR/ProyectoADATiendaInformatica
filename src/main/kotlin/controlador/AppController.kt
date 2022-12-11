@@ -12,7 +12,7 @@ import java.sql.SQLException
 class AppController(val vista: Vista) {
 
     private val gestor = GestorModelo.getInstance()
-    fun onSelectProducto(query: String) {
+    private fun onSelectProducto(query:String) {
         val listaProducto: MutableList<Producto> =  mutableListOf()
         try {
 
@@ -36,14 +36,27 @@ class AppController(val vista: Vista) {
             gestor.disconect()
         }
     }
+    fun onSelectAllProducto() {
+        onSelectProducto(SentenciasSQL.selectAllProducto)
+    }
+    fun onSelectProductoId() {
+        onSelectProducto(SentenciasSQL.selectProductoId)
+    }
+    fun onSelectProdDisponible() {
+        onSelectProducto(SentenciasSQL.selectProdDisponible)
+    }
+    fun onSelectProdNoDisponible() {
+        onSelectProducto(SentenciasSQL.selectProdNoDisponible)
+    }
 
 
-    fun onSelectProveedor() {
+
+    fun onSelectProveedor(query:String) {
         val listaProveedor: MutableList<Proveedor> =  mutableListOf()
         try {
             val cn: Connection = gestor.conect()
             val ps =
-                cn.prepareStatement(SentenciasSQL.selectAllProveedor)
+                cn.prepareStatement(query)
             val rs = ps.executeQuery()
             while (rs.next()) {
                 listaProveedor.add(
@@ -65,10 +78,18 @@ class AppController(val vista: Vista) {
 
     }
 
-    fun onInsertProducto(query: String, producto: Producto) {
+    fun onSelectAllProveedor(){
+        onSelectProveedor(SentenciasSQL.selectAllProveedor)
+    }
+    fun onSelectProveedorId(){
+        onSelectProveedor(SentenciasSQL.selectProveedorId)
+    }
+
+
+    fun onInsertProducto(producto: Producto) {
         try {
             val cn: Connection = gestor.conect()
-            val ps = cn.prepareStatement(query)
+            val ps = cn.prepareStatement(SentenciasSQL.insertProduct)
             ps.setString(1, producto.id)
             ps.setString(2, producto.nombre)
             ps.setInt(3, producto.existencias)
@@ -85,11 +106,11 @@ class AppController(val vista: Vista) {
         }
     }
 
-    fun onInsertProveedor(query: String, proveedor: Proveedor) {
+    fun onInsertProveedor(proveedor: Proveedor) {
         try {
 
             val cn: Connection = gestor.conect()
-            val ps = cn.prepareStatement(query)
+            val ps = cn.prepareStatement(SentenciasSQL.insertProveedor)
             ps.setString(1, proveedor.id)
             ps.setString(2, proveedor.nombre)
             ps.setString(3, proveedor.direccion)
@@ -232,23 +253,6 @@ class AppController(val vista: Vista) {
             gestor.disconect()
         }
     }
-
-    /*fun onAllProducts() {
-        val gestor: GestorModelo = GestorModelo.getInstance()
-        gestor.conect()
-
-        if (listaProductos == null) {
-            vista.basedeDatosCaida()
-        } else if (listaProductos.size == 0) {
-            vista.noProdStock()
-        } else if (listaProductos.size > 0) {
-            for (producto in listaProductos) {
-                vista.showProduct(producto)
-            }
-        } else {
-            vista.errorGeneral()
-        }
-    }*/
 
     fun onStart(){
         val opcion = vista.menuPrincipal()
