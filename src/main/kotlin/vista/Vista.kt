@@ -35,8 +35,35 @@ class Vista {
         do{
             var opc: Int = readln().toInt()
             when(opc){
-                1 -> println()
+                1 -> AppController().onSelectProveedor()
+                2 -> AppController().onSelectProveedor()
+                3 -> {
+                    println("Id:")
+                    var id:String = readln().toString()
+                    println("Nombre:")
+                    var nombre:String = readln().toString()
+                    println("Dirección:")
+                    var direccion:String = readln().toString()
+                    println("Teléfono:")
+                    var telefono:Int = readln().toInt()
+                    var nuevoProv: Proveedor = Proveedor(id,nombre,direccion,telefono)
+                    AppController().onInsertProveedor("insert proveedor", nuevoProv)
+                }
+                4 -> {
+                    println("¿Actualizar teléfono(1) o dirección(2)?")
+                    var opcAct: Int = readln().toInt()
+                    while(true)
+                    if(opcAct == 1){
 
+                        //AppController().onUpdateTelProveedor()
+                    }else if(opcAct == 2){
+                        //
+                    }else{
+                        println("Opción no válida, elije de nuevo (1 o 2):")
+                        continue;
+                    }
+                }
+                //5 -> //AppController().onDeleteProveedor()
             }
         }while (!error)
 
