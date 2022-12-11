@@ -24,9 +24,11 @@ class Vista {
     }
     fun menuProveedor(){
         println("ÁREA DE PROVEEDORES" +
-                "elije" +
-                "1.Mostrar lista de proveedores" +
-                "")
+                "\nelije" +
+                "\n1.Mostrar lista de proveedores." +
+                "\n2.Mostrar información de un proveedor." +
+                "\n3.Actualizar datos (telefono o dirección)" +
+                "\n")
 
     }
     fun menuProducto(){
@@ -79,6 +81,5 @@ fun mostrarProducto(listaProducto: MutableList<Producto>){
     fun salir() {
         println("Adios")
     }
-
 
 }
