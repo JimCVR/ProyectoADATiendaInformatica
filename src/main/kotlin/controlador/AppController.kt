@@ -43,7 +43,7 @@ class AppController(val vista: Vista) {
         try {
             val cn: Connection = gestor.conect()
             val ps =
-                cn.prepareStatement(SentenciasSQL.selectAllProducto)
+                cn.prepareStatement(SentenciasSQL.selectAllProveedor)
             val rs = ps.executeQuery()
             while (rs.next()) {
                 listaProveedor.add(
@@ -175,6 +175,64 @@ class AppController(val vista: Vista) {
             gestor.disconect()
         }
     }
+
+    fun onDeleteProductoId(producto:Producto){
+        var nLineas:Int=0
+        val cn: Connection = gestor.conect()
+        try {
+            cn!!.autoCommit = false
+            gestor.conect()
+            val ps =
+                cn.prepareStatement(SentenciasSQL.deleteProductoId)
+            ps.setString(1,producto.id)
+            nLineas=ps.executeUpdate()
+        } catch (s: SQLException) {
+            s.printStackTrace()
+        }finally {
+            cn!!.commit()
+            //vista.deleteRealizado(nLineas)
+            gestor.disconect()
+        }
+    }
+
+    fun onDeleteProductoTipo(producto:Producto){
+        var nLineas:Int=0
+        val cn: Connection = gestor.conect()
+        try {
+            cn!!.autoCommit = false
+            gestor.conect()
+            val ps =
+                cn.prepareStatement(SentenciasSQL.deleteProductoTipo)
+            ps.setString(1,producto.tipo)
+            nLineas=ps.executeUpdate()
+        } catch (s: SQLException) {
+            s.printStackTrace()
+        }finally {
+            cn!!.commit()
+            //vista.deleteRealizado(nLineas)
+            gestor.disconect()
+        }
+    }
+
+    fun onDeleteProveedor(proveedor: Proveedor){
+        var nLineas:Int=0
+        val cn: Connection = gestor.conect()
+        try {
+            cn!!.autoCommit = false
+            gestor.conect()
+            val ps =
+                cn.prepareStatement(SentenciasSQL.deleteProveedorId)
+            ps.setString(1,proveedor.id)
+            nLineas=ps.executeUpdate()
+        } catch (s: SQLException) {
+            s.printStackTrace()
+        }finally {
+            cn!!.commit()
+            //vista.deleteRealizado(nLineas)
+            gestor.disconect()
+        }
+    }
+
     /*fun onAllProducts() {
         val gestor: GestorModelo = GestorModelo.getInstance()
         gestor.conect()
