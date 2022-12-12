@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b6a0e29-c07a-4743-a0e2-240b251084b7" name="Changes" comment="Data class Producto y Proveedor">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/controlador/AppController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/controlador/AppController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/modelo/sentencias/SentenciasSQL.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/modelo/sentencias/SentenciasSQL.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/vista/Vista.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/vista/Vista.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,6 +52,20 @@
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
       <recent name="" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MainKt" />
+      <module name="TiendaDeInformatica" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Kotlin.MainKt" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

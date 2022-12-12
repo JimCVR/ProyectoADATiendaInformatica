@@ -27,7 +27,7 @@ class AppController() {
                     rs.getInt(3),
                     rs.getDouble(4),
                     rs.getString(5),
-                    rs.getString(5))
+                    rs.getString(6))
                 )
             }
         } catch (s: SQLException) {
@@ -71,15 +71,12 @@ class AppController() {
     fun onSelectProdNoDisponible() {
         onSelectProducto(SentenciasSQL.selectProdNoDisponible)
     }
-
-
-
-    private fun onSelectProveedor(query:String) {
+    fun onSelectAllProveedor() {
         val listaProveedor: MutableList<Proveedor> =  mutableListOf()
         try {
             val cn: Connection = gestor.conect()
             val ps =
-                cn.prepareStatement(query)
+                cn.prepareStatement(SentenciasSQL.selectAllProveedor)
             val rs = ps.executeQuery()
             while (rs.next()) {
                 listaProveedor.add(
@@ -99,10 +96,6 @@ class AppController() {
             gestor.disconect()
         }
 
-    }
-
-    fun onSelectAllProveedor(){
-        onSelectProveedor(SentenciasSQL.selectAllProveedor)
     }
     fun onSelectProveedorId(id:String){
         val listaProveedor: MutableList<Proveedor> =  mutableListOf()
@@ -147,6 +140,7 @@ class AppController() {
         } catch (s: SQLException) {
             s.printStackTrace()
         } finally {
+            vista.insertRealizado()
             gestor.disconect()
         }
     }
@@ -166,6 +160,7 @@ class AppController() {
         } catch (s: SQLException) {
             s.printStackTrace()
         } finally {
+            vista.insertRealizado()
             gestor.disconect()
         }
     }
@@ -174,7 +169,6 @@ class AppController() {
         var nLineas:Int=0
         try {
             val cn: Connection = gestor.conect()
-            gestor.conect()
             val ps =
                 cn.prepareStatement(SentenciasSQL.updateCantProd)
             ps.setInt(1, cant)
@@ -183,7 +177,7 @@ class AppController() {
         } catch (s: SQLException) {
             s.printStackTrace()
         }finally {
-            //vista.updateRealizado(nLineas)
+            vista.updateRealizado(nLineas)
             gestor.disconect()
         }
     }
@@ -192,7 +186,6 @@ class AppController() {
         var nLineas:Int=0
         try {
             val cn: Connection = gestor.conect()
-            gestor.conect()
             val ps =
                 cn.prepareStatement(SentenciasSQL.updatePriceProd)
             ps.setDouble(1, precio)
@@ -201,7 +194,7 @@ class AppController() {
         } catch (s: SQLException) {
             s.printStackTrace()
         }finally {
-            //vista.updateRealizado(nLineas)
+            vista.updateRealizado(nLineas)
             gestor.disconect()
         }
     }
@@ -210,7 +203,6 @@ class AppController() {
         var nLineas:Int=0
         try {
             val cn: Connection = gestor.conect()
-            gestor.conect()
             val ps =
                 cn.prepareStatement(SentenciasSQL.updateDirProveedor)
             ps.setString(1, direccion)
@@ -219,7 +211,7 @@ class AppController() {
         } catch (s: SQLException) {
             s.printStackTrace()
         }finally {
-            //vista.updateRealizado(nLineas)
+            vista.updateRealizado(nLineas)
             gestor.disconect()
         }
     }
@@ -228,7 +220,6 @@ class AppController() {
         var nLineas:Int=0
         try {
             val cn: Connection = gestor.conect()
-            gestor.conect()
             val ps =
                 cn.prepareStatement(SentenciasSQL.updateTelProveedor)
             ps.setInt(1, telefono)
@@ -237,7 +228,7 @@ class AppController() {
         } catch (s: SQLException) {
             s.printStackTrace()
         }finally {
-            //vista.updateRealizado(nLineas)
+            vista.updateRealizado(nLineas)
             gestor.disconect()
         }
     }
@@ -246,16 +237,15 @@ class AppController() {
         var nLineas:Int=0
         val cn: Connection = gestor.conect()
         try {
-            cn!!.autoCommit = false
-            gestor.conect()
+            cn.autoCommit = false
             val ps = cn.prepareStatement(SentenciasSQL.deleteProductoId)
             ps.setString(1,id)
             nLineas=ps.executeUpdate()
         } catch (s: SQLException) {
             s.printStackTrace()
         }finally {
-            cn!!.commit()
-            //vista.deleteRealizado(nLineas)
+            cn.commit()
+            vista.deleteRealizado(nLineas)
             gestor.disconect()
         }
     }
@@ -264,8 +254,7 @@ class AppController() {
         var nLineas:Int=0
         val cn: Connection = gestor.conect()
         try {
-            cn!!.autoCommit = false
-            gestor.conect()
+            cn.autoCommit = false
             val ps =
                 cn.prepareStatement(SentenciasSQL.deleteProductoTipo)
             ps.setString(1,tipo)
@@ -273,8 +262,8 @@ class AppController() {
         } catch (s: SQLException) {
             s.printStackTrace()
         }finally {
-            cn!!.commit()
-            //vista.deleteRealizado(nLineas)
+            cn.commit()
+            vista.deleteRealizado(nLineas)
             gestor.disconect()
         }
     }
@@ -283,8 +272,7 @@ class AppController() {
         var nLineas:Int=0
         val cn: Connection = gestor.conect()
         try {
-            cn!!.autoCommit = false
-            gestor.conect()
+            cn.autoCommit = false
             val ps =
                 cn.prepareStatement(SentenciasSQL.deleteProveedorId)
             ps.setString(1,id)
@@ -292,14 +280,14 @@ class AppController() {
         } catch (s: SQLException) {
             s.printStackTrace()
         }finally {
-            cn!!.commit()
-            //vista.deleteRealizado(nLineas)
+            cn.commit()
+            vista.deleteRealizado(nLineas)
             gestor.disconect()
         }
     }
 
     fun onStart(){
-        val opcion = vista.menuPrincipal()
+        vista.menuPrincipal()
     }
 
     fun onExit() {
