@@ -25,7 +25,7 @@ class Vista {
     }
     fun menuProveedor(){
         println("ÁREA DE PROVEEDORES" +
-                "\nelije" +
+                "\nElige una opción:" +
                 "\n1.Mostrar lista de proveedores." +
                 "\n2.Mostrar información de un proveedor." +
                 "\n3.Añadir nuevo proveedor."+
@@ -35,8 +35,12 @@ class Vista {
         do{
             var opc: Int = readln().toInt()
             when(opc){
-                1 -> AppController().onSelectProveedor()
-                2 -> AppController().onSelectProveedor()
+                1 -> AppController().onSelectAllProveedor()
+                2 -> {
+                    println("Id del proveedor:")
+                    var id: String = readln().toString()
+                    AppController().onSelectProveedorId(id)
+                }
                 3 -> {
                     println("Id:")
                     var id:String = readln().toString()
@@ -47,45 +51,113 @@ class Vista {
                     println("Teléfono:")
                     var telefono:Int = readln().toInt()
                     var nuevoProv: Proveedor = Proveedor(id,nombre,direccion,telefono)
-                    AppController().onInsertProveedor("insert proveedor", nuevoProv)
+                    AppController().onInsertProveedor(nuevoProv)
                 }
                 4 -> {
                     println("¿Actualizar teléfono(1) o dirección(2)?")
                     var opcAct: Int = readln().toInt()
-                    while(true)
-                    if(opcAct == 1){
-
-                        //AppController().onUpdateTelProveedor()
-                    }else if(opcAct == 2){
-                        //
-                    }else{
-                        println("Opción no válida, elije de nuevo (1 o 2):")
-                        continue;
+                    while(true){
+                        println("Id del proveedor:")
+                        var id: String = readln().toString()
+                        if(opcAct == 1){
+                            println("Nuevo teléfono:")
+                            var telefono:Int = readln().toInt()
+                            AppController().onUpdateTelProveedor(id,telefono)
+                        }else if(opcAct == 2){
+                            println("Nueva dirección:")
+                            var direccion:String = readln().toString()
+                            AppController().onUpdateDirProveedor(id,direccion)
+                        }else{
+                            println("Opción no válida, elige de nuevo (1 o 2):")
+                            continue;
+                        }
                     }
                 }
-                //5 -> //AppController().onDeleteProveedor()
+                5 -> {
+                    println("Id del proveedor:")
+                    var id: String = readln().toString()
+                    AppController().onDeleteProveedor(id)
+                }
             }
         }while (!error)
 
     }
     fun menuProducto(){
-        println("Inventario")
-        println("*********************")
-        println("1.Consulta")
-        println("1.1.Consultar productos")
-        println("1.2.Consultar producto concreto")
-        println("1.3.Consultar producto disponibles")
-        println("1.4.Consultar producto fuera de stock")
-        println("2.Insertar productos")
-        println("3.Actualizar producto")
-
-        println("4.Borrar producto")
-        println("4.1.Borrar producto concreto")
-        println("4.2.Borrar producto por tipo")
-
-        println("5.Aumentar Stock")
-        println("6.")
-        println("*********************")
+        println("INVENTARIO" +
+                "\nElige una opcion" +
+                "\n1.Mostrar lista de productos." +
+                "\n2.Consultar producto por id." +
+                "\n3.Consultar productos por disponibilidad"+
+                "\n4.Insertar un nuevo producto." +
+                "\n5.Actualizar existencias." +
+                "\n6.Actualizar precio." +
+                "\n7.Eliminar un producto.")
+        var error:Boolean = false
+        do{
+            var opc: Int = readln().toInt()
+            when(opc){
+                1 -> AppController().onSelectAllProducto()
+                2 ->{
+                    println("Id del producto:")
+                    var id:String = readln().toString()
+                    AppController().onSelectProductoId(id)
+                    }
+                3 ->{
+                    println("Productos disponibles:")
+                    AppController().onSelectProdDisponible()
+                    println("\nProductos fuera de stock:")
+                    AppController().onSelectProdNoDisponible()
+                }
+                4 ->{
+                    println("Id:")
+                    var id:String = readln().toString()
+                    println("Nombre:")
+                    var nombre:String = readln().toString()
+                    println("Existencias:")
+                    var existencias:Int = readln().toInt()
+                    println("Precio:")
+                    var precio:Double = readln().toDouble()
+                    println("Tipo:")
+                    var tipo:String = readln().toString()
+                    println("Id del proveedor:")
+                    var idProv:String = readln().toString()
+                    var producto:Producto = Producto(id,nombre,existencias,precio,tipo,idProv)
+                    AppController().onInsertProducto(producto)
+                }
+                5 -> {
+                    println("Id:")
+                    var id:String = readln().toString()
+                    println("Existencias:")
+                    var existencias:Int = readln().toInt()
+                    AppController().onUpdateExistencias(id,existencias)
+                }
+                6 -> {
+                    println("Id:")
+                    var id:String = readln().toString()
+                    println("Nuevo precio:")
+                    var precio:Double = readln().toDouble()
+                    AppController().onUpdatePrecio(id,precio)
+                }
+                7 ->{
+                    println("¿Borrar productos por id(1) o por tipo(2)?")
+                    var opcAct: Int = readln().toInt()
+                    while(true){
+                        if(opcAct == 1){
+                            println("Id:")
+                            var id:String = readln().toString()
+                            AppController().onDeleteProductoId(id)
+                        }else if(opcAct == 2){
+                            println("Tipo:")
+                            var tipo:String = readln().toString()
+                            AppController().onDeleteProductoTipo(tipo)
+                        }else{
+                            println("Opción no válida, elige de nuevo (1 o 2):")
+                            continue;
+                        }
+                    }
+                }
+            }
+        }while(!error)
     }
 fun mostrarProveedor(listaProveedor: MutableList<Proveedor>){
 
